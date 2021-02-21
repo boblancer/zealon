@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: email-backend
+  name: guestbook-ui
 spec:
   ports:
   - port: 80
     targetPort: 80
   - port: 587
-    targetPort: 587
+  targetPort: 587
   selector:
-    app: email-backend
+    app: guestbook-ui

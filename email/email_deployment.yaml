@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: email-backend
+  name: guestbook-ui
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: email-backend
+      app: guestbook-ui
   template:
     metadata:
       labels:
-        app: email-backend
+        app: guestbook-ui
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: email-backend
+        name: guestbook-ui
         ports:
-        - containerPort: 80
